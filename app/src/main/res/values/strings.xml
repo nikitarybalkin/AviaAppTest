@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AviaApp</string>
+    <string name="avia_tickets_icon">AviaTickets</string>
+    <string name="hotels_icons">Hotels</string>
+    <string name="in_short_icon">In short</string>
+    <string name="subscriptions_icon">Subscriptions</string>
+    <string name="profile_icon">Profile</string>
+    <string name="find_tickets">Find cheap tickets</string>
+
+</resources>

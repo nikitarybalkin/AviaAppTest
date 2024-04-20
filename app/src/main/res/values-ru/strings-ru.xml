@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="avia_tickets_icon">Авиабилеты</string>
+    <string name="hotels_icons">Отели</string>
+    <string name="in_short_icon">Короче</string>
+    <string name="subscriptions_icon">Подписки</string>
+    <string name="profile_icon">Профиль</string>
+    <string name="find_tickets">Найти дешёвые билеты</string>
+
+</resources>
