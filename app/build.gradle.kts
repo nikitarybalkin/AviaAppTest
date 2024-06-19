@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.aviaapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-
+    val roomVersion = "2.6.1"
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -55,7 +55,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
-
     //Navigation
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
@@ -67,6 +66,8 @@ dependencies {
     implementation("com.google.dagger:dagger-android-support:2.48")
     //Glide
     implementation("com.github.bumptech.glide:glide:4.14.2")
+    kapt ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation ("jp.wasabeef:glide-transformations:4.3.0")
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
@@ -79,4 +80,14 @@ dependencies {
     implementation("androidx.room:room-runtime:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+    //AdapterDelegate
+    implementation ("com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.0")
+    //Room
+    implementation("androidx.room:room-rxjava2:$roomVersion")
+    implementation("androidx.room:room-rxjava3:$roomVersion")
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    //Other modules
+    implementation(project(":domain"))
+    implementation(project(":data"))
 }

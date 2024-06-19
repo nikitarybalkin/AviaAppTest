@@ -4,4 +4,5 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     kotlin("kapt") version "1.9.23"
     id("com.google.devtools.ksp") version "1.9.0-1.0.13" apply false
+    alias(libs.plugins.androidLibrary) apply false
 }

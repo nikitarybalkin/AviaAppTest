@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "AviaApp"
 include(":app")
- 
+include(":data")
+include(":domain")
