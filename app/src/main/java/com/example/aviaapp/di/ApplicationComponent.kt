@@ -2,6 +2,7 @@ package com.example.aviaapp.di
 
 import android.content.Context
 import com.example.aviaapp.di.modules.ApiModule
+import com.example.aviaapp.di.modules.DataBaseModule
 import com.example.aviaapp.di.modules.NetworkModule
 import com.example.aviaapp.di.modules.SharedPreferencesModule
 import com.example.aviaapp.di.modules.ViewModelModule
@@ -14,7 +15,6 @@ import dagger.Component
 
 @Component(modules = [ViewModelModule::class, SharedPreferencesModule::class, ApiModule::class, NetworkModule::class, DataBaseModule::class])
 interface ApplicationComponent {
-
     fun inject(fragment: MenuFragment)
     fun inject(fragment: SearchChosenFragment)
     fun inject(fragment: SearchFragment)

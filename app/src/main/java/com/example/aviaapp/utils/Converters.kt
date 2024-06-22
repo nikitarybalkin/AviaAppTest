@@ -1,10 +1,7 @@
 package com.example.aviaapp.utils
 
 import android.content.Context
-import android.os.Build
-import android.util.Log
-import androidx.annotation.RequiresApi
-import com.example.domain.R
+import com.example.aviaapp.R
 import java.time.Duration
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -19,7 +16,6 @@ class Converters() {
             for (i in 1..strBuilder.length/3) {
                 currentPos+=3
                 strBuilder.insert(strBuilder.length - currentPos, " ")
-                Log.d("LOL", "str = $strBuilder")
             }
             return "от ${strBuilder} ₽"
         } else return "от ${price} ₽"
@@ -37,28 +33,28 @@ class Converters() {
     fun getDate(context: Context): String {
         val calendar = Calendar.getInstance()
         var month = when (calendar.get(Calendar.MONTH)) {
-            0 -> context.getString(com.example.aviaapp.R.string.january)
-            1 -> context.getString(com.example.aviaapp.R.string.february)
-            2 -> context.getString(com.example.aviaapp.R.string.march)
-            3 -> context.getString(com.example.aviaapp.R.string.april)
-            4 -> context.getString(com.example.aviaapp.R.string.may)
-            5 -> context.getString(com.example.aviaapp.R.string.june)
-            6 -> context.getString(com.example.aviaapp.R.string.jule)
-            7 -> context.getString(com.example.aviaapp.R.string.august)
-            8 -> context.getString(com.example.aviaapp.R.string.september)
-            9 -> context.getString(com.example.aviaapp.R.string.october)
-            10 -> context.getString(com.example.aviaapp.R.string.november)
-            11 -> context.getString(com.example.aviaapp.R.string.december)
+            0 -> context.getString(R.string.january)
+            1 -> context.getString(R.string.february)
+            2 -> context.getString(R.string.march)
+            3 -> context.getString(R.string.april)
+            4 -> context.getString(R.string.may)
+            5 -> context.getString(R.string.june)
+            6 -> context.getString(R.string.jule)
+            7 -> context.getString(R.string.august)
+            8 -> context.getString(R.string.september)
+            9 -> context.getString(R.string.october)
+            10 -> context.getString(R.string.november)
+            11 -> context.getString(R.string.december)
             else -> {""}
         }
         var dayOfWeek = when(calendar.get(Calendar.DAY_OF_WEEK)) {
-            1 -> context.getString(com.example.aviaapp.R.string.sunday)
-            2 -> context.getString(com.example.aviaapp.R.string.monday)
-            3 -> context.getString(com.example.aviaapp.R.string.tuesday)
-            4 -> context.getString(com.example.aviaapp.R.string.wednesday)
-            5 -> context.getString(com.example.aviaapp.R.string.thursday)
-            6 -> context.getString(com.example.aviaapp.R.string.friday)
-            7 -> context.getString(com.example.aviaapp.R.string.saturday)
+            1 -> context.getString(R.string.sunday)
+            2 -> context.getString(R.string.monday)
+            3 -> context.getString(R.string.tuesday)
+            4 -> context.getString(R.string.wednesday)
+            5 -> context.getString(R.string.thursday)
+            6 -> context.getString(R.string.friday)
+            7 -> context.getString(R.string.saturday)
             else -> {""}
         }
         return "${calendar.get(Calendar.DAY_OF_MONTH)} $month, $dayOfWeek"
@@ -75,7 +71,8 @@ class Converters() {
         val dateTime1 = LocalDateTime.parse(departure, formatter)
         val dateTime2 = LocalDateTime.parse(arrival, formatter)
         val duration = ((Duration.between(dateTime1, dateTime2).toMinutes() / 60.0) * 2).roundToInt() / 2.0
-        return duration.toString()
+        if (duration % 1.0 == 0.0) return "${duration.toInt()}ч в пути"
+        return "${duration}ч в пути"
     }
 
 

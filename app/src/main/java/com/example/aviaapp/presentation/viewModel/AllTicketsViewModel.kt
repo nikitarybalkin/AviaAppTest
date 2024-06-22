@@ -2,16 +2,15 @@ package com.example.aviaapp.presentation.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-
-import com.example.aviaapp.domain.usecases.GetAllTicketsUseCase
-import com.example.aviaapp.domain.model.AllTicketsModel
+import com.example.domain.model.AllTicketsModel
+import com.example.domain.usecases.GetAllTicketsUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class AllTicketsViewModel @Inject constructor(private val getAllTicketsUseCase: com.example.aviaapp.domain.usecases.GetAllTicketsUseCase): ViewModel() {
+class AllTicketsViewModel @Inject constructor(private val getAllTicketsUseCase: GetAllTicketsUseCase): ViewModel() {
 
-    var allTicketsModel: MutableStateFlow<com.example.aviaapp.domain.model.AllTicketsModel?> = MutableStateFlow(null)
+    var allTicketsModel: MutableStateFlow<AllTicketsModel?> = MutableStateFlow(null)
     fun getAllTickets() {
         viewModelScope.launch {
             try {

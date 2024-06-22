@@ -1,15 +1,17 @@
 package com.example.aviaapp.di.modules
 
-
-import com.example.aviapp.data.dataSources.AllTicketsRemoteDataSource
-import com.example.aviapp.data.dataSources.AllTicketsRemoteDataSourceImpl
-import com.example.aviapp.data.dataSources.OffersRemoteDataSource
-import com.example.aviapp.data.dataSources.OffersRemoteDataSourceIMpl
-import com.example.aviapp.data.dataSources.TicketsRemoteDataSource
-import com.example.aviapp.data.dataSources.TicketsRemoteDataSourceImpl
-import com.example.aviapp.data.repositryImpls.AllTicketsRepositoryImpl
-import com.example.aviapp.data.repositryImpls.OffersRepositoryImpl
-import com.example.aviapp.data.repositryImpls.TicketsRepositoryImpl
+import com.data.dataSources.AllTicketsRemoteDataSource
+import com.data.dataSources.AllTicketsRemoteDataSourceImpl
+import com.data.repositryImpls.AllTicketsRepositoryImpl
+import com.data.dataSources.OffersRemoteDataSource
+import com.data.dataSources.OffersRemoteDataSourceIMpl
+import com.data.repositryImpls.OffersRepositoryImpl
+import com.data.dataSources.TicketsRemoteDataSource
+import com.data.dataSources.TicketsRemoteDataSourceImpl
+import com.data.repositryImpls.TicketsRepositoryImpl
+import com.example.domain.repositories.AllTicketsRepository
+import com.example.domain.repositories.OffersRepository
+import com.example.domain.repositories.TicketsRepository
 import dagger.Module
 import dagger.Provides
 
@@ -22,7 +24,7 @@ class ApiModule {
     }
 
     @Provides
-    fun providesOffersRepository(offersRepositoryImpl: OffersRepositoryImpl): com.example.aviaapp.domain.repositories.OffersRepository {
+    fun providesOffersRepository(offersRepositoryImpl: OffersRepositoryImpl): OffersRepository {
         return offersRepositoryImpl
     }
 
@@ -32,7 +34,7 @@ class ApiModule {
     }
 
     @Provides
-    fun providesTicketsRepository(ticketsRepositoryImpl: TicketsRepositoryImpl): com.example.aviaapp.domain.repositories.TicketsRepository {
+    fun providesTicketsRepository(ticketsRepositoryImpl: TicketsRepositoryImpl): TicketsRepository {
         return ticketsRepositoryImpl
     }
 
@@ -42,7 +44,7 @@ class ApiModule {
     }
 
     @Provides
-    fun providesAllTicketsRepository(allTicketsRepositoryImpl: AllTicketsRepositoryImpl): com.example.aviaapp.domain.repositories.AllTicketsRepository {
+    fun providesAllTicketsRepository(allTicketsRepositoryImpl: AllTicketsRepositoryImpl): AllTicketsRepository {
         return allTicketsRepositoryImpl
     }
 }

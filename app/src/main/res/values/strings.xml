@@ -48,5 +48,8 @@
     <string name="sunday">su</string>
     <string name="back">add</string>
     <string name="one_econom">1, econom</string>
+    <string name="b_back">Back to the start screen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

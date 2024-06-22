@@ -36,23 +36,17 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    //implementation(project(":data"))
     //Dagger
     kapt("com.google.dagger:dagger-android-processor:2.48")
     ksp("com.google.dagger:dagger-compiler:2.48")
     implementation("com.google.dagger:dagger:2.48")
     implementation("com.google.dagger:dagger-android-support:2.48")
-    //Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.google.code.gson:gson:2.10")
-    implementation("com.squareup.moshi:moshi:1.14.0")
-    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.13.0")
     //Room
     implementation("androidx.room:room-rxjava2:2.6.1")
     implementation("androidx.room:room-rxjava3:2.6.1")

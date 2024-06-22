@@ -2,8 +2,8 @@ package com.example.aviaapp.di
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.aviaapp.domain.model.CityEntity
-import com.example.aviapp.data.dao.CityDao
+import com.data.dao.CityDao
+import com.example.domain.entities.CityEntity
 
 @Database(entities = [CityEntity::class], version = 1, exportSchema = false)
 

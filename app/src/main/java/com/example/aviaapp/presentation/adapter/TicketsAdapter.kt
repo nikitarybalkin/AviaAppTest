@@ -1,13 +1,13 @@
 package com.example.aviaapp.presentation.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aviaapp.databinding.ItemMusicallyBinding
 import com.example.aviaapp.databinding.ItemTicketBinding
-import com.example.aviaapp.domain.apiModel.model.Ticket
 import com.example.aviaapp.utils.Converters
+import com.example.domain.model.Ticket
 
 class TicketsAdapter(private var tickets: List<Ticket>): RecyclerView.Adapter<TicketsViewHolder>()  {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TicketsViewHolder {
@@ -19,15 +19,21 @@ class TicketsAdapter(private var tickets: List<Ticket>): RecyclerView.Adapter<Ti
 
     override fun onBindViewHolder(holder: TicketsViewHolder, position: Int) {
         holder.binding.let {
-        if (tickets[position].badge != "") {
+        if (tickets[position].badge != null) {
+            Log.d("LOL", "badge = ${tickets[position].badge}")
             it.shield.visibility = View.VISIBLE
             it.shield.text = tickets[position].badge
             }
         it.tvPrice.text = Converters().convertPrice(tickets[position].price.value)
         it.tvAirport1.text = tickets[position].departure.airport
         it.tvAirport2.text = tickets[position].arrival.airport
+        it.tvTime1.text = Converters().getDepartureTime(tickets[position].departure.date)
+        it.tvTime2.text = Converters().getArrivalTime(tickets[position].arrival.date)
         it.tvFullTime.text = Converters()
             .getFullTime(tickets[position].departure.date, tickets[position].arrival.date)
+        if (tickets[position].has_transfer != false) {
+            it.tvTransfer.text = "/Без пересадок"
+        }
         }
     }
 }

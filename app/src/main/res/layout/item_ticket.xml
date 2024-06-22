@@ -6,28 +6,29 @@
     
     <ImageView
         android:id="@+id/background"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
         android:src="@drawable/direct_flights_rouded_corners"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         />
-    <com.google.android.material.button.MaterialButton
+    <TextView
         android:id="@+id/shield"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/price_color"
+        android:background="@drawable/badge_background"
         app:layout_constraintTop_toTopOf="@id/background"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="-10dp"
         app:layout_constraintStart_toStartOf="@id/background"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:clickable="false"
         android:visibility="gone"
         android:fontFamily="@font/sf_pro_display_lightitalic"
-        
         />
     <TextView
         android:id="@+id/tv_price"
@@ -38,7 +39,7 @@
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="@id/background"
         app:layout_constraintStart_toStartOf="@id/background"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         />
     <ImageView
@@ -111,6 +112,17 @@
         app:layout_constraintTop_toTopOf="@id/tv_time2"
         app:layout_constraintBottom_toBottomOf="@id/tv_time2"
         android:layout_marginStart="13dp"
+        />
+    <TextView
+        android:id="@+id/tv_transfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sf_pro_display_light"
+        app:layout_constraintStart_toEndOf="@id/tv_full_time"
+        app:layout_constraintTop_toTopOf="@id/tv_time2"
+        app:layout_constraintBottom_toBottomOf="@id/tv_time2"
         />
     <TextView
         android:id="@+id/tv_airport2"

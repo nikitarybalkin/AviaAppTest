@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.aviaapp.R
-import com.example.aviapp.data.ButtonFunction
+import com.data.ButtonFunction
 import com.example.aviaapp.databinding.ItemButtonBinding
-import com.example.aviaapp.databinding.ItemMusicallyBinding
 
-class ButtonsAdapter(val context: Context, val buttonsActions: List<com.example.aviapp.data.ButtonFunction>): RecyclerView.Adapter<ButtonViewHolder>() {
+class ButtonsAdapter(val context: Context, val buttonsActions: List<ButtonFunction>): RecyclerView.Adapter<ButtonViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ButtonViewHolder {
         val binding = ItemButtonBinding.inflate(LayoutInflater.from(parent.context))
         return ButtonViewHolder(binding)

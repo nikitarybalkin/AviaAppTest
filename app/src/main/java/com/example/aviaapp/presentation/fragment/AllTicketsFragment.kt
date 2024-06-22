@@ -1,7 +1,6 @@
 package com.example.aviaapp.presentation.fragment
 
 import android.content.Context
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,14 +11,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.aviaapp.R
 import com.example.aviaapp.databinding.FragmentAllTicketsBinding
-import com.example.aviaapp.databinding.FragmentMenuBinding
 import com.example.aviaapp.di.App
 import com.example.aviaapp.di.ViewModelFactory
 import com.example.aviaapp.presentation.adapter.TicketsAdapter
 import com.example.aviaapp.presentation.viewModel.AllTicketsViewModel
-import com.example.aviaapp.presentation.viewModel.MenuViewModel
-import com.example.aviaapp.presentation.viewModel.SearchChosenViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

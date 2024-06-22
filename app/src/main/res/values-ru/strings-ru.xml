@@ -49,4 +49,5 @@
     <string name="sunday">вс</string>
     <string name="back">обратно</string>
     <string name="one_econom">1, эконом</string>
+    <string name="b_back">Вернуться на стартовый экран</string>
 </resources>

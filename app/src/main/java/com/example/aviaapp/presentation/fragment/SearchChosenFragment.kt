@@ -4,23 +4,19 @@ import android.app.DatePickerDialog
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.aviaapp.R
-import com.example.aviapp.data.ButtonFunction
-import com.example.aviaapp.databinding.DialogSearchBinding
 import com.example.aviaapp.databinding.FragmentSearchChosenBinding
 import com.example.aviaapp.di.App
 import com.example.aviaapp.di.ViewModelFactory
-import com.example.aviaapp.utils.Converters
 import com.example.aviaapp.presentation.adapter.ButtonsAdapter
 import com.example.aviaapp.presentation.viewModel.SearchChosenViewModel
-import kotlinx.coroutines.flow.collect
+import com.example.aviaapp.utils.Converters
 import kotlinx.coroutines.launch
 import java.util.Calendar
 
@@ -59,10 +55,7 @@ class SearchChosenFragment : Fragment() {
             var bundleTo = Bundle()
             bundleTo.putString("name_from_where", binding.ed1FromWhere.text.toString())
             bundleTo.putString("name_to_where", binding.ed2ToWhere.text.toString())
-            findNavController().navigate(
-                R.id.action_searchChosenFragment_to_searchFragment,
-                bundleTo
-            )
+            findNavController().navigate(R.id.action_searchChosenFragment_to_searchFragment, bundleTo)
         }
         binding.ivTurnOver.setOnClickListener {
             var from_where: String = binding.ed1FromWhere.text.toString()
@@ -87,30 +80,27 @@ class SearchChosenFragment : Fragment() {
             var bundleTo = Bundle()
             bundleTo.putString("name_from_where", binding.ed1FromWhere.text.toString())
             bundleTo.putString("name_to_where", binding.ed2ToWhere.text.toString())
-            findNavController().navigate(
-                R.id.action_searchChosenFragment_to_allTicketsFragment,
-                bundleTo
-            )
+            findNavController().navigate(R.id.action_searchChosenFragment_to_allTicketsFragment, bundleTo)
         }
         val calendar = Calendar.getInstance()
         var adapter = ButtonsAdapter(
             buttonsActions = listOf(
-                com.example.aviapp.data.ButtonFunction(
+                com.data.ButtonFunction(
                     name = getString(R.string.back),
                     action = { setDate() },
                     url = R.drawable.plus
                 ),
-                com.example.aviapp.data.ButtonFunction(
+                com.data.ButtonFunction(
                     name = Converters().getDate(requireContext()),
                     action = { setDate() },
                     url = null
                 ),
-                com.example.aviapp.data.ButtonFunction(
+                com.data.ButtonFunction(
                     name = getString(R.string.one_econom),
                     action = {},
                     url = R.drawable.man
                 ),
-                com.example.aviapp.data.ButtonFunction(
+                com.data.ButtonFunction(
                     name = getString(R.string.filters),
                     action = {},
                     url = R.drawable.filter
@@ -158,9 +148,9 @@ class SearchChosenFragment : Fragment() {
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
-        Log.d("LOL", "setDate работает")
         val datePickerDialog = DatePickerDialog(
             requireContext(),
+
         )
         datePickerDialog.show()
 

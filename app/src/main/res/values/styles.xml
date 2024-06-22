@@ -3,4 +3,10 @@
     <style name="NoUnderlineEditText">
         <item name="android:background">@null</item>
     </style>
+
+    <style name="BottomNavigationViewStyle" parent="Widget.Design.BottomNavigationView">
+        <item name="itemBackground">@color/black</item>
+        <item name="itemIconTint">@color/bottom_color</item>
+        <item name="itemTextColor">@color/bottom_color</item>
+    </style>
 </resources>

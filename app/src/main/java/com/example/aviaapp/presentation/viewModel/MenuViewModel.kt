@@ -3,26 +3,24 @@ package com.example.aviaapp.presentation.viewModel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.aviaapp.domain.model.CityModel
-import com.example.aviaapp.domain.usecases.GetDataUseCase
-import com.example.aviaapp.domain.usecases.OffersUseCase
-import com.example.aviaapp.domain.usecases.SaveDataUseCase
-import com.example.aviaapp.domain.model.OffersModel
-import com.example.aviaapp.domain.usecases.CityUseCase
+import com.example.domain.usecases.CityUseCase
+import com.example.domain.usecases.GetDataUseCase
+import com.example.domain.usecases.OffersUseCase
+import com.example.domain.usecases.SaveDataUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class MenuViewModel @Inject constructor(
-    private val saveDataUseCase: com.example.aviaapp.domain.usecases.SaveDataUseCase,
-    private val getDataUseCase: com.example.aviaapp.domain.usecases.GetDataUseCase,
-    private val offersUseCase: com.example.aviaapp.domain.usecases.OffersUseCase,
-    private val cityUseCase: com.example.aviaapp.domain.usecases.CityUseCase
+    private val saveDataUseCase: SaveDataUseCase,
+    private val getDataUseCase: GetDataUseCase,
+    private val offersUseCase: OffersUseCase,
+    private val cityUseCase: CityUseCase
 ) : ViewModel() {
 
-    var offers: MutableStateFlow<com.example.aviaapp.domain.model.OffersModel?> = MutableStateFlow(null)
-    var city: Flow<List<com.example.aviaapp.domain.model.CityModel?>> = MutableStateFlow(emptyList())
+    var offers: MutableStateFlow<com.example.domain.model.OffersModel?> = MutableStateFlow(null)
+    var city: Flow<List<com.example.domain.model.CityModel?>> = MutableStateFlow(emptyList())
     fun saveData(key: String, value: String) {
         saveDataUseCase.saveData(key = key, value = value)
     }
@@ -31,10 +29,9 @@ class MenuViewModel @Inject constructor(
         return getDataUseCase.getData(key = key)
     }
 
-    fun insertCity(city: com.example.aviaapp.domain.model.CityModel) {
+    fun insertCity(city: com.example.domain.model.CityModel) {
         viewModelScope.launch {
             cityUseCase.insert(city)
-            Log.d("LOL", "заинсертило")
         }
     }
 

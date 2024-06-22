@@ -1,19 +1,15 @@
 package com.example.aviaapp.presentation.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
-import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.aviaapp.R
 import com.example.aviaapp.databinding.ItemMusicallyBinding
-import com.example.aviaapp.domain.apiModel.model.Offer
-import com.example.aviaapp.domain.model.OffersModel
 import com.example.aviaapp.utils.Converters
+import com.example.domain.model.Offer
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
 class MusicallyAdapter(

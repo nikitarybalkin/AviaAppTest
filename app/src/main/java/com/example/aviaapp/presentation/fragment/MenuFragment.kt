@@ -1,17 +1,13 @@
 package com.example.aviaapp.presentation.fragment
 
 import android.content.Context
-import android.os.Build
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -19,8 +15,6 @@ import com.example.aviaapp.R
 import com.example.aviaapp.databinding.FragmentMenuBinding
 import com.example.aviaapp.di.App
 import com.example.aviaapp.di.ViewModelFactory
-import com.example.aviaapp.domain.model.CityModel
-import com.example.aviaapp.utils.Converters
 import com.example.aviaapp.presentation.adapter.MusicallyAdapter
 import com.example.aviaapp.presentation.viewModel.MenuViewModel
 import kotlinx.coroutines.launch
@@ -97,8 +91,8 @@ class MenuFragment : Fragment() {
             if (binding.ed1FromWhere.text.toString() != "") {
                 var bundle = Bundle()
                 bundle.putString("name_from_where", binding.ed1FromWhere.text.toString())
-                findNavController().navigate(R.id.action_mainFragment2_to_searchFragment, bundle)
-            } else findNavController().navigate(R.id.action_mainFragment2_to_searchFragment)
+                findNavController().navigate(R.id.action_menuFragment_to_searchFragment, bundle)
+            } else findNavController().navigate(R.id.action_menuFragment_to_searchFragment)
 
 
         }

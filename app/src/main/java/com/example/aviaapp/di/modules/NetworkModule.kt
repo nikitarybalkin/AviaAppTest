@@ -1,8 +1,8 @@
 package com.example.aviaapp.di.modules
 
-import com.example.aviapp.data.api.AllTicketsAPI
-import com.example.aviapp.data.api.OffersAPI
-import com.example.aviapp.data.api.TicketsAPI
+import com.data.api.AllTicketsAPI
+import com.data.api.OffersAPI
+import com.data.api.TicketsAPI
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

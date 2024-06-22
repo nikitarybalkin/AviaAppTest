@@ -42,6 +42,8 @@ android {
 
 dependencies {
     val roomVersion = "2.6.1"
+    implementation(project(":domain"))
+    implementation(project(":data"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -55,13 +57,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.12.0")
     //Navigation
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
     //Dagger
     kapt("com.google.dagger:dagger-android-processor:2.48")
     ksp("com.google.dagger:dagger-compiler:2.48")
-    //annotationProcessor("com.google.dagger:dagger-compiler:2.48")
     implementation("com.google.dagger:dagger:2.48")
     implementation("com.google.dagger:dagger-android-support:2.48")
     //Glide
@@ -87,7 +90,4 @@ dependencies {
     implementation("androidx.room:room-rxjava3:$roomVersion")
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
-    //Other modules
-    implementation(project(":domain"))
-    implementation(project(":data"))
 }

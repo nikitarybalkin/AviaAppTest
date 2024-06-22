@@ -1,6 +1,7 @@
 package com.example.aviaapp.di.modules
 
-import com.example.aviapp.data.repositryImpls.SharedPreferenceRepositoryImpl
+import com.data.repositryImpls.SharedPreferenceRepositoryImpl
+import com.example.domain.repositories.SharedPreferenceRepository
 import dagger.Module
 import dagger.Provides
 
@@ -8,7 +9,7 @@ import dagger.Provides
 class SharedPreferencesModule {
 
     @Provides
-    fun providesSharedPreferencesRepository(impl: SharedPreferenceRepositoryImpl): com.example.aviaapp.domain.repositories.SharedPreferenceRepository {
+    fun providesSharedPreferencesRepository(impl: SharedPreferenceRepositoryImpl): SharedPreferenceRepository {
         return impl
     }
 

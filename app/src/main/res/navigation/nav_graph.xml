@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment2">
+    app:startDestination="@id/menuFragment">
 
     <fragment
-        android:id="@+id/mainFragment2"
+        android:id="@+id/menuFragment"
         android:name="com.example.aviaapp.presentation.fragment.MenuFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_menu" >
         <action
-            android:id="@+id/action_mainFragment2_to_searchFragment"
+            android:id="@+id/action_menuFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_emptyFragment"
+            app:destination="@id/emptyFragment" />
     </fragment>
     <fragment
         android:id="@+id/allTicketsFragment"
@@ -53,4 +56,25 @@
             android:id="@+id/action_searchChosenFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/emptyFragment"
+        android:name="com.example.aviaapp.presentation.fragment.EmptyFragment"
+        android:label="fragment_empty"
+        tools:layout="@layout/fragment_empty" >
+        <action
+            android:id="@+id/action_emptyFragment_to_mainFragment2"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/empty2Fragment"
+        android:name="com.example.aviaapp.presentation.fragment.Empty2Fragment"
+        android:label="Empty2Fragment" />
+    <fragment
+        android:id="@+id/empty3Fragment"
+        android:name="com.example.aviaapp.presentation.fragment.Empty3Fragment"
+        android:label="Empty3Fragment" />
+    <fragment
+        android:id="@+id/empty4Fragment"
+        android:name="com.example.aviaapp.presentation.fragment.Empty4Fragment"
+        android:label="Empty4Fragment" />
 </navigation>
